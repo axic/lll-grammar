@@ -1,0 +1,46 @@
+Program = Whitespace? Expression (Whitespace Expression Whitespace?)*
+
+Expression = Literal
+    | Identifier
+    | EscapedIdentifier
+    | List
+    | SpecialExpression
+
+SpecialExpression = Sequence
+    | Mload
+    | Sload
+    | Mstore
+    | Sstore
+    | Calldataload
+
+Literal = StringLiteral
+    | DecimalNumberLiteral
+    | HexNumberLiteral
+
+List = '(' Expression? (Whitespace Expression)* ')'
+
+Sequence = '{' Expression? (Whitespace Expression)* '}'
+
+Mload = '@' Expression
+
+Sload = '@@' Expression
+
+Mstore = '[' Expression ']' (':' | Whitespace) Expression
+
+Sstore = '[[' Expression ']]' (':' | Whitespace) Expression
+
+Calldataload = '$' Expression
+
+Identifier = [a-zA-Z_] [a-zA-Z0-9_]+
+
+EscapedIdentifier = '\'' Identifier
+
+StringLiteral = '"' [^"]* '"'
+
+DecimalNumberLiteral = [0-9]+
+
+HexNumberLiteral = '0x' [0-9a-fA-F]+
+
+Whitespace = [ \t\r\n]*
+
+Comment = ';' [^\r\n]*
