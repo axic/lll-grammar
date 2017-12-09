@@ -291,7 +291,7 @@ Logical `OR` of two arguments.
 
 #### `if` (3 args)
 
-*Supported by: Solidity*
+*Supported by: Solidity, Viper*
 
 #### `when`
 
@@ -313,34 +313,11 @@ Logical `OR` of two arguments.
 
 *Supported by: Solidity*
 
-## Viper specific
-
-#### `pass`
-#### `repeat`
-#### `break`
-#### `assert`
-#### `uclamplt`
-#### `uclample`
-#### `clamplt`
-#### `clample`
-#### `uclampgt`
-#### `uclampge`
-#### `clampgt`
-#### `clampge`
-#### `clamp`
-#### `uclamp`
-#### `clamp_nonzero`
-#### `sha3_32`
-#### `le`
-#### `ge`
-#### `sle`
-#### `sge`
-#### `ne`
-#### `ceil32`
 
 ## EVM instructions
 
 TBA all EVM instructions supported (Solidity, Serpent, Viper differ here a bit)
+
 
 ## Solidity specific
 
@@ -431,3 +408,106 @@ Take expressions and return a compiled bytecode.
 #### `finney`
 
 #### `ether`
+
+
+## Viper specific
+
+#### `repeat` (4 args)
+
+Repeat (for loops) statements.
+
+```
+(repeat memloc, start, rounds, body)
+```
+
+#### `pass` (0 args)
+
+Pass statement, does nothing.
+
+#### `break` (0 args)
+
+Break from inside a `repeat` statement.
+
+#### `assert` (1 arg)
+
+Uses the `revert` opcode if the expression is false.
+
+#### `codelen`
+
+The length of the code.
+
+#### `codeload`
+
+`CALLDATALOAD` equivalent for code.
+
+#### `uclamplt` (2 args)
+
+Unsigned less than statement.
+
+#### `uclample` (2 args)
+
+Unsigned less than or equal statement.
+
+#### `clamplt` (2 args)
+
+Signed less than statement.
+
+#### `clample` (2 args)
+
+Signed less than or equal statement.
+
+#### `uclampgt` (2 args)
+
+Unsigned greater than statement.
+
+#### `uclampge` (2 args)
+
+Unsigned greater than or equal statement.
+
+#### `clampgt` (2 args)
+
+Signed greater than statement.
+
+#### `clampge` (2 args)
+
+Signed greater than or equal statement.
+
+#### `clamp` (3 args)
+
+Signed clamp, check against upper and lower bounds.
+
+#### `uclamp` (3 args)
+
+Unsigned clamp, check against upper and lower bounds.
+
+#### `clamp_nonzero` (1 args)
+
+Checks that arg isn't zero.
+
+#### `sha3_32` (1 args)
+
+SHA3 a single value.
+
+#### `le` (2 args)
+
+Unsigned less than statement.
+
+#### `ge` (2 args)
+
+Unsigned greater than statement.
+
+#### `sle` (2 args)
+
+Signed less than statement.
+
+#### `sge` (2 args)
+
+Signed greater than statement.
+
+#### `ne` (2 args)
+
+Checks for inequality.
+
+#### `ceil32` (1 args)
+
+Rounds up to the nearest factor of 32.
