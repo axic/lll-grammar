@@ -5,4 +5,4 @@ This is an attempt at specifying the grammar and semantics of LLL. The [work in 
 There are a few LLL implementations, which more or less agree:
 - [Solidity's LLL](https://github.com/ethereum/solidity)
 - [Serpent's LLL](https://github.com/ethereum/serpent)
-- [Viper's LLL](https://github.com/ethereum/viper)
+- [Vyper's LLL](https://github.com/ethereum/viper)
